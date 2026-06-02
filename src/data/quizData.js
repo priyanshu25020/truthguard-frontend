@@ -125,42 +125,42 @@ export const quizSections = [
             question: "Which headline is the MOST obvious clickbait?",
             options: [
                 { id: 'A', text: "City Council Approves New Transportation Budget" },
-                { id: 'B', text: "You Won't Believe What Happened After He Opened His Door!" },
-                { id: 'C', text: "University Releases Annual Research Report" },
+                { id: 'B', text: "University Releases Annual Research Report" },
+                { id: 'C', text: "You Won't Believe What Happened After He Opened His Door!" },
                 { id: 'D', text: "Weather Forecast Predicts Rain This Weekend" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'C',
             explanation: "Phrases like 'You Won't Believe' are classic clickbait indicators."
         },
         {
             question: "Which headline is designed to create curiosity without giving details?",
             options: [
-                { id: 'A', text: "Scientists Publish Findings on Renewable Energy" },
-                { id: 'B', text: "This One Simple Trick Changed Everything!" },
-                { id: 'C', text: "Government Announces New Education Policy" },
-                { id: 'D', text: "Hospital Opens New Emergency Wing" }
+                { id: 'A', text: "Government Announces New Education Policy" },
+                { id: 'B', text: "Scientists Publish Findings on Renewable Energy" },
+                { id: 'C', text: "Hospital Opens New Emergency Wing" },
+                { id: 'D', text: "This One Simple Trick Changed Everything!" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'D',
             explanation: "It hides key information to force users to click."
         },
         {
             question: "Which headline uses emotional manipulation?",
             options: [
-                { id: 'A', text: "Local School Wins National Competition" },
-                { id: 'B', text: "Parents Are Furious After Seeing This Shocking Report!" },
+                { id: 'A', text: "Parents Are Furious After Seeing This Shocking Report!" },
+                { id: 'B', text: "Local School Wins National Competition" },
                 { id: 'C', text: "New Park Opens Downtown" },
                 { id: 'D', text: "Research Shows Benefits of Meditation" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'A',
             explanation: "Words like 'furious' and 'shocking' are often used to trigger emotions."
         },
         {
             question: "Which headline is most likely clickbait?",
             options: [
-                { id: 'A', text: "Study Examines Effects of Screen Time on Teenagers" },
+                { id: 'A', text: "Researchers Develop Improved Cancer Screening Method" },
                 { id: 'B', text: "Doctors Hate This New Health Secret!" },
-                { id: 'C', text: "New Medical Center Opens in City" },
-                { id: 'D', text: "Researchers Develop Improved Cancer Screening Method" }
+                { id: 'C', text: "Study Examines Effects of Screen Time on Teenagers" },
+                { id: 'D', text: "New Medical Center Opens in City" }
             ],
             correctAnswer: 'B',
             explanation: "'Doctors Hate This' is a common clickbait phrase."
@@ -168,43 +168,43 @@ export const quizSections = [
         {
             question: "Which headline exaggerates reality the most?",
             options: [
-                { id: 'A', text: "New Smartphone Features Longer Battery Life" },
-                { id: 'B', text: "This Smartphone Will Change Human History Forever!" },
-                { id: 'C', text: "Tech Company Announces Product Launch" },
-                { id: 'D', text: "Industry Report Highlights Mobile Trends" }
+                { id: 'A', text: "Industry Report Highlights Mobile Trends" },
+                { id: 'B', text: "New Smartphone Features Longer Battery Life" },
+                { id: 'C', text: "This Smartphone Will Change Human History Forever!" },
+                { id: 'D', text: "Tech Company Announces Product Launch" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'C',
             explanation: "It makes an unrealistic claim to attract clicks."
         },
         {
             question: "Which headline creates a false sense of urgency?",
             options: [
-                { id: 'A', text: "Scientists Release New Research Paper" },
-                { id: 'B', text: "Read This Before It's Deleted Forever!" },
+                { id: 'A', text: "Read This Before It's Deleted Forever!" },
+                { id: 'B', text: "Scientists Release New Research Paper" },
                 { id: 'C', text: "Library Announces New Opening Hours" },
                 { id: 'D', text: "City Expands Public Transport Network" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'A',
             explanation: "Urgency is often used to pressure users into clicking."
         },
         {
             question: "Which headline relies on mystery rather than facts?",
             options: [
-                { id: 'A', text: "Government Publishes Economic Growth Report" },
-                { id: 'B', text: "What This Woman Found Under Her Bed Will Shock You!" },
-                { id: 'C', text: "Scientists Discover New Marine Species" },
-                { id: 'D', text: "University Launches Scholarship Program" }
+                { id: 'A', text: "Scientists Discover New Marine Species" },
+                { id: 'B', text: "University Launches Scholarship Program" },
+                { id: 'C', text: "Government Publishes Economic Growth Report" },
+                { id: 'D', text: "What This Woman Found Under Her Bed Will Shock You!" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'D',
             explanation: "The headline hides information and relies on curiosity."
         },
         {
             question: "Which headline contains a typical clickbait phrase?",
             options: [
-                { id: 'A', text: "Researchers Analyze Air Pollution Trends" },
+                { id: 'A', text: "Museum Opens New Exhibition" },
                 { id: 'B', text: "The Secret Big Companies Don't Want You to Know!" },
-                { id: 'C', text: "New Highway Construction Begins" },
-                { id: 'D', text: "Museum Opens New Exhibition" }
+                { id: 'C', text: "Researchers Analyze Air Pollution Trends" },
+                { id: 'D', text: "New Highway Construction Begins" }
             ],
             correctAnswer: 'B',
             explanation: "'Don't Want You to Know' is a classic clickbait tactic."
@@ -212,34 +212,922 @@ export const quizSections = [
         {
             question: "Which headline is most likely written to maximize clicks rather than inform?",
             options: [
-                { id: 'A', text: "Study Finds Link Between Sleep and Productivity" },
-                { id: 'B', text: "This Amazing Discovery Left Scientists Speechless!" },
-                { id: 'C', text: "Researchers Publish Climate Data Analysis" },
-                { id: 'D', text: "City Introduces New Recycling Program" }
+                { id: 'A', text: "City Introduces New Recycling Program" },
+                { id: 'B', text: "Researchers Publish Climate Data Analysis" },
+                { id: 'C', text: "This Amazing Discovery Left Scientists Speechless!" },
+                { id: 'D', text: "Study Finds Link Between Sleep and Productivity" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'C',
             explanation: "The headline focuses on hype instead of information."
         },
         {
             question: "Which headline should immediately make a reader skeptical?",
             options: [
-                { id: 'A', text: "NASA Releases Data from Latest Mars Mission" },
-                { id: 'B', text: "Scientists Confirm Humans Will Become Immortal by 2030!" },
-                { id: 'C', text: "Health Department Issues Seasonal Flu Advisory" },
-                { id: 'D', text: "New Research Examines Ocean Temperatures" }
+                { id: 'A', text: "Health Department Issues Seasonal Flu Advisory" },
+                { id: 'B', text: "New Research Examines Ocean Temperatures" },
+                { id: 'C', text: "Scientists Confirm Humans Will Become Immortal by 2030!" },
+                { id: 'D', text: "NASA Releases Data from Latest Mars Mission" }
             ],
-            correctAnswer: 'B',
+            correctAnswer: 'C',
             explanation: "Extraordinary claims without evidence are often clickbait."
         }]
     },
-    { id: 3, title: "Misleading Titles", category: "Level 1: Beginner", questions: [] },
-    { id: 4, title: "Emotional Manipulation", category: "Level 1: Beginner", questions: [] },
-    { id: 5, title: "Sensational News", category: "Level 1: Beginner", questions: [] },
-    { id: 6, title: "Fact vs Opinion", category: "Level 1: Beginner", questions: [] },
-    { id: 7, title: "Source Identification", category: "Level 1: Beginner", questions: [] },
-    { id: 8, title: "Viral Social Media Posts", category: "Level 1: Beginner", questions: [] },
-    { id: 9, title: "Image Context Check", category: "Level 1: Beginner", questions: [] },
-    { id: 10, title: "Basic News Verification", category: "Level 1: Beginner", questions: [] },
+    {
+        id: 3, title: "Misleading Titles", category: "Level 1: Beginner", questions: [{
+            question: "Which headline is most likely misleading?",
+            options: [
+                { id: 'A', text: "Scientists Discover New Treatment for Diabetes" },
+                { id: 'B', text: "This Fruit Completely Cures Diabetes Overnight!" },
+                { id: 'C', text: "Doctors Publish New Medical Research" },
+                { id: 'D', text: "Hospital Expands Diabetes Care Unit" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Claims of an overnight cure are misleading and unsupported."
+        },
+        {
+            question: "Which headline exaggerates the actual event?",
+            options: [
+                { id: 'A', text: "Mayor Announces New Community Program" },
+                { id: 'B', text: "Local Park Gets New Equipment" },
+                { id: 'C', text: "This Decision Will Change the Entire World Forever!" },
+                { id: 'D', text: "City Council Approves Budget Plan" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The headline exaggerates the significance of the event."
+        },
+        {
+            question: "Which title may mislead readers by leaving out important context?",
+            options: [
+                { id: 'A', text: "Man Arrested After Incident Downtown" },
+                { id: 'B', text: "University Opens New Research Center" },
+                { id: 'C', text: "Government Releases Annual Report" },
+                { id: 'D', text: "Weather Forecast Predicts Snowfall" }
+            ],
+            correctAnswer: 'A',
+            explanation: "The headline lacks details and context about the incident."
+        },
+        {
+            question: "Which headline uses misleading wording?",
+            options: [
+                { id: 'A', text: "Study Finds Coffee May Improve Focus" },
+                { id: 'B', text: "Researchers Publish Nutrition Report" },
+                { id: 'C', text: "Coffee Proven to Make Everyone Smarter!" },
+                { id: 'D', text: "New Cafe Opens Downtown" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The headline overstates what research can actually prove."
+        },
+        {
+            question: "Which headline could create a false impression?",
+            options: [
+                { id: 'A', text: "Vaccines Cause Dangerous Side Effects in Everyone!" },
+                { id: 'B', text: "Health Officials Release New Vaccine Guidelines" },
+                { id: 'C', text: "Doctors Recommend Routine Vaccinations" },
+                { id: 'D', text: "Medical Study Reviews Vaccine Safety" }
+            ],
+            correctAnswer: 'A',
+            explanation: "The claim is broad, misleading, and unsupported."
+        },
+        {
+            question: "Which headline is most likely intended to mislead readers?",
+            options: [
+                { id: 'A', text: "City Launches Recycling Campaign" },
+                { id: 'B', text: "Government Publishes Economic Data" },
+                { id: 'C', text: "Scientists Discuss Climate Trends" },
+                { id: 'D', text: "Experts Shocked by Secret Government Plot!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "The headline uses sensational language without evidence."
+        },
+        {
+            question: "Which title oversimplifies a complex issue?",
+            options: [
+                { id: 'A', text: "One Law Will Solve All Crime Problems Instantly!" },
+                { id: 'B', text: "Researchers Study Crime Prevention Methods" },
+                { id: 'C', text: "Police Department Releases Annual Statistics" },
+                { id: 'D', text: "Community Leaders Discuss Safety Programs" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Complex social issues cannot be solved instantly by one law."
+        },
+        {
+            question: "Which headline could mislead readers about scientific findings?",
+            options: [
+                { id: 'A', text: "Scientists Begin New Cancer Research Project" },
+                { id: 'B', text: "Research Team Publishes Preliminary Results" },
+                { id: 'C', text: "Scientists Say Cancer Will Be Eliminated Next Year!" },
+                { id: 'D', text: "Medical Conference Highlights New Discoveries" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The claim makes unrealistic promises based on research."
+        },
+        {
+            question: "Which headline lacks necessary context?",
+            options: [
+                { id: 'A', text: "Global Temperatures Continue Long-Term Rise" },
+                { id: 'B', text: "Crime Increased by 200%!" },
+                { id: 'C', text: "New Education Policy Introduced" },
+                { id: 'D', text: "Local Charity Raises Funds for Schools" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Without time frame or location, the statistic is misleading."
+        },
+        {
+            question: "Which headline should readers treat with caution?",
+            options: [
+                { id: 'A', text: "Government Releases Population Census Data" },
+                { id: 'B', text: "University Announces Scholarship Program" },
+                { id: 'C', text: "Scientists Publish Peer-Reviewed Study" },
+                { id: 'D', text: "Miracle Device Guarantees Perfect Health for Life!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Guarantees of perfect health are unrealistic and misleading."
+        }]
+    },
+    {
+        id: 4, title: "Emotional Manipulation", category: "Level 1: Beginner", questions: [{
+            question: "Which headline is most likely designed to make readers feel angry?",
+            options: [
+                { id: 'A', text: "Parents Furious After School Makes Controversial Decision!" },
+                { id: 'B', text: "School Board Announces New Policy Changes" },
+                { id: 'C', text: "Teachers Attend Education Conference" },
+                { id: 'D', text: "Students Participate in Science Fair" }
+            ],
+            correctAnswer: 'A',
+            explanation: "The words 'Furious' and 'Controversial' are used to provoke anger."
+        },
+        {
+            question: "Which headline uses fear to attract attention?",
+            options: [
+                { id: 'A', text: "Researchers Publish Health Study" },
+                { id: 'B', text: "This Common Habit Could Be Secretly Destroying Your Life!" },
+                { id: 'C', text: "Hospital Expands Emergency Services" },
+                { id: 'D', text: "Doctors Discuss Public Health Trends" }
+            ],
+            correctAnswer: 'B',
+            explanation: "The headline creates fear without providing evidence."
+        },
+        {
+            question: "Which headline attempts to create sympathy?",
+            options: [
+                { id: 'A', text: "City Council Approves New Budget" },
+                { id: 'B', text: "University Opens Research Center" },
+                { id: 'C', text: "Heartbroken Family Left With Nothing After Tragic Event" },
+                { id: 'D', text: "Weather Forecast Predicts Rain" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The wording is intended to trigger sympathy and sadness."
+        },
+        {
+            question: "Which headline is most emotionally charged?",
+            options: [
+                { id: 'A', text: "Government Releases Annual Report" },
+                { id: 'B', text: "Scientists Study Climate Patterns" },
+                { id: 'C', text: "New Community Center Opens Downtown" },
+                { id: 'D', text: "Shocking Betrayal Leaves Entire Nation Outraged!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Words like 'Shocking' and 'Outraged' strongly appeal to emotions."
+        },
+        {
+            question: "Which headline is designed to make readers feel guilty?",
+            options: [
+                { id: 'A', text: "Charity Organization Launches New Campaign" },
+                { id: 'B', text: "If You Ignore This Story, You're Part of the Problem!" },
+                { id: 'C', text: "Researchers Publish Environmental Findings" },
+                { id: 'D', text: "New Public Park Opens This Weekend" }
+            ],
+            correctAnswer: 'B',
+            explanation: "The headline pressures readers emotionally by inducing guilt."
+        },
+        {
+            question: "Which headline uses emotional language instead of facts?",
+            options: [
+                { id: 'A', text: "Experts Release Economic Forecast" },
+                { id: 'B', text: "Local Business Expands Operations" },
+                { id: 'C', text: "Innocent Citizens Suffer as Heartless Officials Fail Again!" },
+                { id: 'D', text: "Researchers Study Consumer Behavior" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The headline relies on emotional accusations rather than facts."
+        },
+        {
+            question: "Which headline tries to provoke fear and panic?",
+            options: [
+                { id: 'A', text: "Scientists Warn of Possible Disease Outbreak Tomorrow!" },
+                { id: 'B', text: "Hospital Releases Health Advisory" },
+                { id: 'C', text: "Doctors Discuss Seasonal Illnesses" },
+                { id: 'D', text: "Health Officials Monitor Public Safety" }
+            ],
+            correctAnswer: 'A',
+            explanation: "The wording creates unnecessary alarm and urgency."
+        },
+        {
+            question: "Which headline is most likely to manipulate emotions?",
+            options: [
+                { id: 'A', text: "New Research Examines Air Quality" },
+                { id: 'B', text: "City Approves New Infrastructure Plan" },
+                { id: 'C', text: "Community Volunteers Clean Local Park" },
+                { id: 'D', text: "You Should Be Furious After Reading This Story!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "It directly tells readers how they should feel."
+        },
+        {
+            question: "Which headline uses sadness to influence readers?",
+            options: [
+                { id: 'A', text: "Tragic Story of Forgotten Children Breaks Everyone's Heart" },
+                { id: 'B', text: "Government Announces New Welfare Program" },
+                { id: 'C', text: "School Introduces New Curriculum" },
+                { id: 'D', text: "Researchers Study Childhood Development" }
+            ],
+            correctAnswer: 'A',
+            explanation: "The headline uses emotional wording to evoke sadness."
+        },
+        {
+            question: "Which headline appeals more to emotions than evidence?",
+            options: [
+                { id: 'A', text: "Scientists Publish Peer-Reviewed Research" },
+                { id: 'B', text: "Data Shows Improvement in Public Health" },
+                { id: 'C', text: "Experts Present Findings at Conference" },
+                { id: 'D', text: "This Outrageous Scandal Will Leave You Speechless!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "The headline focuses on emotional reaction instead of facts."
+        }]
+    },
+    {
+        id: 5, title: "Sensational News", category: "Level 1: Beginner", questions: [{
+            question: "Which headline is the most sensationalized?",
+            options: [
+                { id: 'A', text: "Scientists Publish Climate Report" },
+                { id: 'B', text: "City Council Approves New Budget" },
+                { id: 'C', text: "SHOCKING Discovery Will Change Humanity Forever!" },
+                { id: 'D', text: "University Announces Scholarship Program" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The headline exaggerates the importance of the discovery to attract attention."
+        },
+        {
+            question: "Which headline uses dramatic language to grab attention?",
+            options: [
+                { id: 'A', text: "Experts Release New Economic Forecast" },
+                { id: 'B', text: "Terrifying Secret Revealed That Nobody Saw Coming!" },
+                { id: 'C', text: "Hospital Opens New Medical Wing" },
+                { id: 'D', text: "Researchers Study Ocean Currents" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Words like 'Terrifying' and 'Nobody Saw Coming' are sensational."
+        },
+        {
+            question: "Which headline is most likely trying to create excitement rather than inform?",
+            options: [
+                { id: 'A', text: "Government Releases Annual Statistics" },
+                { id: 'B', text: "School Launches STEM Initiative" },
+                { id: 'C', text: "Local Team Wins Regional Tournament" },
+                { id: 'D', text: "Unbelievable Event Leaves Entire Country Speechless!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "The headline focuses on drama rather than factual information."
+        },
+        {
+            question: "Which headline exaggerates the significance of an event?",
+            options: [
+                { id: 'A', text: "New Smartphone Released Worldwide" },
+                { id: 'B', text: "This Smartphone Will Revolutionize Human Civilization!" },
+                { id: 'C', text: "Tech Company Announces Product Update" },
+                { id: 'D', text: "Industry Report Reviews Market Trends" }
+            ],
+            correctAnswer: 'B',
+            explanation: "The claim is unrealistic and overly dramatic."
+        },
+        {
+            question: "Which headline contains sensational wording?",
+            options: [
+                { id: 'A', text: "City Expands Public Transportation System" },
+                { id: 'B', text: "Researchers Publish Health Findings" },
+                { id: 'C', text: "Government Announces Policy Changes" },
+                { id: 'D', text: "Disastrous Mistake Sends Shockwaves Across the Nation!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "The headline uses dramatic language to increase emotional impact."
+        },
+        {
+            question: "Which headline is most likely written for clicks?",
+            options: [
+                { id: 'A', text: "You Won't Believe This Incredible Discovery!" },
+                { id: 'B', text: "Scientists Release New Research Paper" },
+                { id: 'C', text: "University Opens New Laboratory" },
+                { id: 'D', text: "Weather Forecast Predicts Rain" }
+            ],
+            correctAnswer: 'A',
+            explanation: "It relies on curiosity and hype instead of facts."
+        },
+        {
+            question: "Which headline sounds exaggerated?",
+            options: [
+                { id: 'A', text: "Doctors Study New Treatment Methods" },
+                { id: 'B', text: "Health Department Issues Guidelines" },
+                { id: 'C', text: "Miracle Cure Eliminates Every Disease Instantly!" },
+                { id: 'D', text: "Researchers Conduct Medical Trials" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Claims of miracle cures are often exaggerated and misleading."
+        },
+        {
+            question: "Which headline uses sensationalism instead of evidence?",
+            options: [
+                { id: 'A', text: "New Law Approved by Parliament" },
+                { id: 'B', text: "Scientists Examine Air Pollution Data" },
+                { id: 'C', text: "School Introduces New Curriculum" },
+                { id: 'D', text: "Massive Scandal Rocks the Nation Overnight!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "The headline is dramatic but provides no actual facts."
+        },
+        {
+            question: "Which headline is designed to provoke a strong reaction?",
+            options: [
+                { id: 'A', text: "Experts Present Research Findings" },
+                { id: 'B', text: "Local Business Expands Services" },
+                { id: 'C', text: "Shocking Truth Exposed After Years of Secrecy!" },
+                { id: 'D', text: "City Announces New Housing Project" }
+            ],
+            correctAnswer: 'C',
+            explanation: "The wording is meant to spark curiosity and emotion."
+        },
+        {
+            question: "Which headline should readers view skeptically?",
+            options: [
+                { id: 'A', text: "NASA Releases Mars Mission Update" },
+                { id: 'B', text: "Researchers Publish Scientific Study" },
+                { id: 'C', text: "Government Issues Public Advisory" },
+                { id: 'D', text: "This Event Will Completely Change Life on Earth Forever!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Extraordinary claims without evidence are a sign of sensationalism."
+        }]
+    },
+    {
+        id: 6, title: "Fact vs Opinion", category: "Level 1: Beginner", questions: [{
+            question: "Which statement is a FACT?",
+            options: [
+                { id: 'A', text: "Pizza is the best food in the world." },
+                { id: 'B', text: "The Earth revolves around the Sun." },
+                { id: 'C', text: "Summer is the most enjoyable season." },
+                { id: 'D', text: "Blue is the most beautiful color." }
+            ],
+            correctAnswer: 'B',
+            explanation: "A fact can be verified with evidence, while opinions are personal beliefs."
+        },
+        {
+            question: "Which statement is an OPINION?",
+            options: [
+                { id: 'A', text: "Water freezes at 0°C." },
+                { id: 'B', text: "India is located in Asia." },
+                { id: 'C', text: "Chocolate ice cream tastes better than vanilla." },
+                { id: 'D', text: "The Moon orbits the Earth." }
+            ],
+            correctAnswer: 'C',
+            explanation: "Taste preferences are personal opinions and cannot be proven true or false."
+        },
+        {
+            question: "Which statement is a FACT?",
+            options: [
+                { id: 'A', text: "Dogs are better pets than cats." },
+                { id: 'B', text: "Reading books is boring." },
+                { id: 'C', text: "Basketball is the most exciting sport." },
+                { id: 'D', text: "The Pacific Ocean is the largest ocean on Earth." }
+            ],
+            correctAnswer: 'D',
+            explanation: "The size of oceans can be measured and verified."
+        },
+        {
+            question: "Which statement is an OPINION?",
+            options: [
+                { id: 'A', text: "The Taj Mahal is the most beautiful building in the world." },
+                { id: 'B', text: "The Taj Mahal is located in Agra." },
+                { id: 'C', text: "The Taj Mahal was built in the 17th century." },
+                { id: 'D', text: "Millions of tourists visit the Taj Mahal." }
+            ],
+            correctAnswer: 'A',
+            explanation: "Beauty is subjective and depends on personal preference."
+        },
+        {
+            question: "Which statement can be verified as a FACT?",
+            options: [
+                { id: 'A', text: "Summer is the best season." },
+                { id: 'B', text: "Mount Everest is the tallest mountain above sea level." },
+                { id: 'C', text: "Cricket is more entertaining than football." },
+                { id: 'D', text: "Action movies are more exciting than comedies." }
+            ],
+            correctAnswer: 'B',
+            explanation: "Mountain heights can be measured and verified."
+        },
+        {
+            question: "Which statement is an OPINION?",
+            options: [
+                { id: 'A', text: "Earth has one natural satellite called the Moon." },
+                { id: 'B', text: "Light travels faster than sound." },
+                { id: 'C', text: "Mathematics is the hardest school subject." },
+                { id: 'D', text: "Plants require sunlight to grow." }
+            ],
+            correctAnswer: 'C',
+            explanation: "Difficulty is subjective and varies from person to person."
+        },
+        {
+            question: "Which statement is a FACT?",
+            options: [
+                { id: 'A', text: "Coffee tastes better than tea." },
+                { id: 'B', text: "The human body has 206 bones." },
+                { id: 'C', text: "Cats are cuter than dogs." },
+                { id: 'D', text: "Winter is the most enjoyable season." }
+            ],
+            correctAnswer: 'B',
+            explanation: "The number of bones in the human body is scientifically verified."
+        },
+        {
+            question: "Which statement is an OPINION?",
+            options: [
+                { id: 'A', text: "The Great Wall of China is visible from space." },
+                { id: 'B', text: "The Great Wall of China is located in China." },
+                { id: 'C', text: "The Great Wall of China is one of the most impressive structures ever built." },
+                { id: 'D', text: "The Great Wall was built over many centuries." }
+            ],
+            correctAnswer: 'C',
+            explanation: "Whether something is 'impressive' is a personal judgment."
+        },
+        {
+            question: "Which statement is a FACT?",
+            options: [
+                { id: 'A', text: "Music is the best form of entertainment." },
+                { id: 'B', text: "Video games are more fun than reading books." },
+                { id: 'C', text: "The human heart pumps blood throughout the body." },
+                { id: 'D', text: "Dogs are friendlier than cats." }
+            ],
+            correctAnswer: 'C',
+            explanation: "This is a scientifically proven biological fact."
+        },
+        {
+            question: "Which statement is an OPINION?",
+            options: [
+                { id: 'A', text: "The Eiffel Tower is located in Paris." },
+                { id: 'B', text: "The Eiffel Tower was completed in 1889." },
+                { id: 'C', text: "The Eiffel Tower attracts millions of visitors each year." },
+                { id: 'D', text: "The Eiffel Tower is the most beautiful landmark in the world." }
+            ],
+            correctAnswer: 'D',
+            explanation: "Beauty is subjective and depends on personal opinion."
+        }]
+    },
+    {
+        id: 7, title: "Source Identification", category: "Level 1: Beginner", questions: [{
+            question: "Which source is generally the MOST reliable for scientific information?",
+            options: [
+                { id: 'A', text: "A random social media post" },
+                { id: 'B', text: "A peer-reviewed scientific journal" },
+                { id: 'C', text: "An anonymous blog" },
+                { id: 'D', text: "A meme shared online" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Peer-reviewed journals are reviewed by experts before publication."
+        },
+        {
+            question: "Which source should be treated with the MOST caution?",
+            options: [
+                { id: 'A', text: "Government health website" },
+                { id: 'B', text: "University research paper" },
+                { id: 'C', text: "Anonymous message forwarded on social media" },
+                { id: 'D', text: "Official organization report" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Anonymous messages often lack evidence and accountability."
+        },
+        {
+            question: "Which source is usually considered trustworthy?",
+            options: [
+                { id: 'A', text: "Official government statistics website" },
+                { id: 'B', text: "Rumors in a messaging group" },
+                { id: 'C', text: "Unknown personal blog" },
+                { id: 'D', text: "Satirical news website" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Government statistics are generally based on verified data."
+        },
+        {
+            question: "What is a warning sign that a source may not be reliable?",
+            options: [
+                { id: 'A', text: "The article cites official sources" },
+                { id: 'B', text: "The author is clearly identified" },
+                { id: 'C', text: "The information is supported by evidence" },
+                { id: 'D', text: "The article provides no sources or references" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Reliable articles usually provide evidence and references."
+        },
+        {
+            question: "Which source would be BEST for checking a health claim?",
+            options: [
+                { id: 'A', text: "A celebrity's social media page" },
+                { id: 'B', text: "A random online forum" },
+                { id: 'C', text: "World Health Organization (WHO) website" },
+                { id: 'D', text: "A viral WhatsApp message" }
+            ],
+            correctAnswer: 'C',
+            explanation: "WHO is a globally recognized health authority."
+        },
+        {
+            question: "Which source is MOST likely to contain misinformation?",
+            options: [
+                { id: 'A', text: "Peer-reviewed research article" },
+                { id: 'B', text: "Official government report" },
+                { id: 'C', text: "University publication" },
+                { id: 'D', text: "Anonymous website with no author listed" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Lack of transparency is a major red flag."
+        },
+        {
+            question: "When evaluating a source, what should you check first?",
+            options: [
+                { id: 'A', text: "Whether the information supports your opinion" },
+                { id: 'B', text: "The author's credibility and expertise" },
+                { id: 'C', text: "How many likes it has" },
+                { id: 'D', text: "Whether it went viral" }
+            ],
+            correctAnswer: 'B',
+            explanation: "The credibility of the author is an important reliability indicator."
+        },
+        {
+            question: "Which source is BEST for verifying election results?",
+            options: [
+                { id: 'A', text: "A meme shared on social media" },
+                { id: 'B', text: "A random blog post" },
+                { id: 'C', text: "An anonymous online account" },
+                { id: 'D', text: "The official election commission website" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Official election authorities provide verified results."
+        },
+        {
+            question: "Why is it important to identify the original source of information?",
+            options: [
+                { id: 'A', text: "Because information can change as it is shared" },
+                { id: 'B', text: "Because original sources are always correct" },
+                { id: 'C', text: "Because social media posts are never reliable" },
+                { id: 'D', text: "Because original sources cannot be questioned" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Information often becomes distorted when repeatedly shared."
+        },
+        {
+            question: "Which source is generally the LEAST reliable?",
+            options: [
+                { id: 'A', text: "Official university publication" },
+                { id: 'B', text: "Government agency website" },
+                { id: 'C', text: "Anonymous forwarded message with no evidence" },
+                { id: 'D', text: "Recognized news organization" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Anonymous messages with no evidence are highly unreliable."
+        }]
+    },
+    {
+        id: 8, title: "Viral Social Media Posts", category: "Level 1: Beginner", questions: [{
+            question: "What should you do FIRST when you see a viral social media post?",
+            options: [
+                { id: 'A', text: "Share it immediately" },
+                { id: 'B', text: "Verify the information from reliable sources" },
+                { id: 'C', text: "Assume it is true because it is popular" },
+                { id: 'D', text: "Like the post without reading it" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Popularity does not guarantee accuracy. Always verify first."
+        },
+        {
+            question: "Which viral post should make you MOST skeptical?",
+            options: [
+                { id: 'A', text: "Official government announcement" },
+                { id: 'B', text: "University research summary" },
+                { id: 'C', text: "Breaking News: Share Before They Delete It!" },
+                { id: 'D', text: "Weather department update" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Urgent language like 'Share Before They Delete It' is a red flag."
+        },
+        {
+            question: "Why can viral posts spread misinformation quickly?",
+            options: [
+                { id: 'A', text: "People often share without verifying facts" },
+                { id: 'B', text: "All viral posts are reviewed by experts" },
+                { id: 'C', text: "Social media only shows verified information" },
+                { id: 'D', text: "Virality guarantees accuracy" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Many users share content emotionally without checking facts."
+        },
+        {
+            question: "Which source is BEST for verifying a viral claim?",
+            options: [
+                { id: 'A', text: "A random comment section" },
+                { id: 'B', text: "An anonymous social media account" },
+                { id: 'C', text: "A meme page" },
+                { id: 'D', text: "A trusted fact-checking website" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Fact-checking organizations investigate and verify claims."
+        },
+        {
+            question: "A post has 2 million shares. What does this prove?",
+            options: [
+                { id: 'A', text: "The information is definitely true" },
+                { id: 'B', text: "The post is popular, not necessarily accurate" },
+                { id: 'C', text: "The information has been verified" },
+                { id: 'D', text: "Experts approved the content" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Popularity is not evidence of truth."
+        },
+        {
+            question: "Which viral headline is most likely misleading?",
+            options: [
+                { id: 'A', text: "Government Releases Official Census Data" },
+                { id: 'B', text: "Researchers Publish Climate Study" },
+                { id: 'C', text: "Scientists Confirm New Planet Discovery" },
+                { id: 'D', text: "Doctors Hate This One Secret Trick!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "This is a classic clickbait phrase often used in misleading posts."
+        },
+        {
+            question: "What is a common sign of misinformation in viral posts?",
+            options: [
+                { id: 'A', text: "Links to official sources" },
+                { id: 'B', text: "Clear author information" },
+                { id: 'C', text: "Emotional language and lack of evidence" },
+                { id: 'D', text: "References to research studies" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Misinformation often relies on emotion instead of facts."
+        },
+        {
+            question: "Why should you be cautious of viral screenshots?",
+            options: [
+                { id: 'A', text: "Screenshots can be edited or taken out of context" },
+                { id: 'B', text: "Screenshots are always official documents" },
+                { id: 'C', text: "Screenshots cannot be faked" },
+                { id: 'D', text: "Screenshots are verified by social media platforms" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Images and screenshots can be manipulated easily."
+        },
+        {
+            question: "What is the safest action before sharing a viral post?",
+            options: [
+                { id: 'A', text: "Check multiple trusted sources" },
+                { id: 'B', text: "Forward it to all your contacts" },
+                { id: 'C', text: "Trust the number of likes" },
+                { id: 'D', text: "Share it if your friends believe it" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Cross-checking with multiple sources reduces misinformation."
+        },
+        {
+            question: "Which statement about viral posts is TRUE?",
+            options: [
+                { id: 'A', text: "Viral posts are always fact-checked" },
+                { id: 'B', text: "High engagement means the content is accurate" },
+                { id: 'C', text: "Virality and accuracy are not the same thing" },
+                { id: 'D', text: "Popular posts cannot contain misinformation" }
+            ],
+            correctAnswer: 'C',
+            explanation: "A post can go viral even if it is completely false."
+        }]
+    },
+    {
+        id: 9, title: "Image Context Check", category: "Level 1: Beginner", questions: [{
+            question: "Why is it important to check the context of an image before sharing it?",
+            options: [
+                { id: 'A', text: "Images can be used in a misleading way" },
+                { id: 'B', text: "Images are always accurate" },
+                { id: 'C', text: "Photos never need verification" },
+                { id: 'D', text: "Old images cannot be reused" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Images can be taken out of context and used to spread misinformation."
+        },
+        {
+            question: "What is a common sign that an image may be misleading?",
+            options: [
+                { id: 'A', text: "It includes a date and location" },
+                { id: 'B', text: "It comes from an official source" },
+                { id: 'C', text: "It is being used to describe a different event" },
+                { id: 'D', text: "It has a photographer credit" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Old images are often reused and falsely linked to new events."
+        },
+        {
+            question: "What should you do if a shocking image appears online?",
+            options: [
+                { id: 'A', text: "Share it immediately" },
+                { id: 'B', text: "Check where and when the image was originally taken" },
+                { id: 'C', text: "Assume it is real because it looks authentic" },
+                { id: 'D', text: "Trust the caption without question" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Verifying the original source helps determine authenticity."
+        },
+        {
+            question: "Which tool can help verify where an image first appeared?",
+            options: [
+                { id: 'A', text: "Calculator" },
+                { id: 'B', text: "Music player" },
+                { id: 'C', text: "Video editor" },
+                { id: 'D', text: "Reverse image search" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Reverse image search helps find the original source of an image."
+        },
+        {
+            question: "A photo from 2018 is being shared as a current event. What is the issue?",
+            options: [
+                { id: 'A', text: "The image quality is poor" },
+                { id: 'B', text: "The image is too old to exist online" },
+                { id: 'C', text: "The image is being used out of context" },
+                { id: 'D', text: "The image cannot be downloaded" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Using old photos to represent new events is misleading."
+        },
+        {
+            question: "Which image should be treated with the MOST caution?",
+            options: [
+                { id: 'A', text: "An image from an official news agency" },
+                { id: 'B', text: "An image with verified source information" },
+                { id: 'C', text: "An image published in a research report" },
+                { id: 'D', text: "An image shared with no source or context" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Images without source information are harder to verify."
+        },
+        {
+            question: "Why can image captions sometimes be misleading?",
+            options: [
+                { id: 'A', text: "Captions can falsely describe what is happening" },
+                { id: 'B', text: "Captions are always verified by experts" },
+                { id: 'C', text: "Captions cannot influence people" },
+                { id: 'D', text: "Captions automatically prove authenticity" }
+            ],
+            correctAnswer: 'A',
+            explanation: "A misleading caption can completely change how an image is interpreted."
+        },
+        {
+            question: "What is the BEST way to verify a viral image?",
+            options: [
+                { id: 'A', text: "Check comments for opinions" },
+                { id: 'B', text: "Trust the number of shares" },
+                { id: 'C', text: "Use reverse image search and trusted sources" },
+                { id: 'D', text: "Assume viral images are accurate" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Verification should involve source checking and image search tools."
+        },
+        {
+            question: "Which statement about images online is TRUE?",
+            options: [
+                { id: 'A', text: "Images cannot be edited" },
+                { id: 'B', text: "Images always show the full story" },
+                { id: 'C', text: "Every viral image is authentic" },
+                { id: 'D', text: "Images can be real but presented in a misleading context" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Even genuine images can be used deceptively."
+        },
+        {
+            question: "What should make you skeptical of an image?",
+            options: [
+                { id: 'A', text: "The image comes from an official source" },
+                { id: 'B', text: "The image lacks a clear source, date, or location" },
+                { id: 'C', text: "The image appears in a news report" },
+                { id: 'D', text: "The image includes photographer information" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Missing context is a major warning sign when evaluating images."
+        }]
+    },
+    {
+        id: 10, title: "Basic News Verification", category: "Level 1: Beginner", questions: [{
+            question: "What should you do FIRST when you read a news story online?",
+            options: [
+                { id: 'A', text: "Share it with friends immediately" },
+                { id: 'B', text: "Check the source of the news" },
+                { id: 'C', text: "Assume it is true" },
+                { id: 'D', text: "Ignore the headline" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Checking the source is the first step in verifying news."
+        },
+        {
+            question: "Which source is generally the MOST trustworthy?",
+            options: [
+                { id: 'A', text: "Anonymous social media account" },
+                { id: 'B', text: "Random blog post" },
+                { id: 'C', text: "Established news organization with editorial standards" },
+                { id: 'D', text: "Forwarded message in a chat group" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Established news organizations follow verification and editorial processes."
+        },
+        {
+            question: "Why is it important to read beyond the headline?",
+            options: [
+                { id: 'A', text: "Headlines can sometimes be misleading" },
+                { id: 'B', text: "Headlines always contain all details" },
+                { id: 'C', text: "Headlines are more important than articles" },
+                { id: 'D', text: "Headlines cannot be fact-checked" }
+            ],
+            correctAnswer: 'A',
+            explanation: "A headline may not accurately reflect the full story."
+        },
+        {
+            question: "What is a good way to verify a news claim?",
+            options: [
+                { id: 'A', text: "Trust the first website you find" },
+                { id: 'B', text: "Check multiple reliable sources" },
+                { id: 'C', text: "Believe it if it has many shares" },
+                { id: 'D', text: "Only read comments" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Comparing multiple trusted sources helps confirm accuracy."
+        },
+        {
+            question: "Which of these is a warning sign of possible misinformation?",
+            options: [
+                { id: 'A', text: "The article cites evidence and sources" },
+                { id: 'B', text: "The author is identified" },
+                { id: 'C', text: "The article uses extreme emotional language" },
+                { id: 'D', text: "The publication has an editorial team" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Extreme emotional language is often used to manipulate readers."
+        },
+        {
+            question: "What should you check when evaluating a news article?",
+            options: [
+                { id: 'A', text: "Publication date" },
+                { id: 'B', text: "Author credibility" },
+                { id: 'C', text: "Supporting evidence" },
+                { id: 'D', text: "All of the above" }
+            ],
+            correctAnswer: 'D',
+            explanation: "All these factors help determine whether information is reliable."
+        },
+        {
+            question: "Why can old news articles be misleading when reshared?",
+            options: [
+                { id: 'A', text: "Events may no longer be current" },
+                { id: 'B', text: "Old articles are automatically false" },
+                { id: 'C', text: "Old articles disappear from the internet" },
+                { id: 'D', text: "Old articles cannot be verified" }
+            ],
+            correctAnswer: 'A',
+            explanation: "Old information can be mistaken for current events."
+        },
+        {
+            question: "Which headline should make you MOST skeptical?",
+            options: [
+                { id: 'A', text: "Government Releases Official Economic Report" },
+                { id: 'B', text: "Researchers Publish New Study" },
+                { id: 'C', text: "Doctors Confirm New Treatment Results" },
+                { id: 'D', text: "SHOCKING SECRET They Don't Want You To Know!" }
+            ],
+            correctAnswer: 'D',
+            explanation: "Sensational language is a common sign of clickbait and misinformation."
+        },
+        {
+            question: "What is fact-checking?",
+            options: [
+                { id: 'A', text: "Sharing news quickly" },
+                { id: 'B', text: "Comparing claims with evidence and reliable sources" },
+                { id: 'C', text: "Reading only headlines" },
+                { id: 'D', text: "Following popular opinions" }
+            ],
+            correctAnswer: 'B',
+            explanation: "Fact-checking involves verifying claims using evidence."
+        },
+        {
+            question: "Before sharing a news story, what is the BEST practice?",
+            options: [
+                { id: 'A', text: "Check if it supports your opinion" },
+                { id: 'B', text: "Share it if your friends shared it" },
+                { id: 'C', text: "Verify the information from trusted sources" },
+                { id: 'D', text: "Trust the number of likes" }
+            ],
+            correctAnswer: 'C',
+            explanation: "Verification helps prevent the spread of misinformation."
+        }]
+    },
 
     // ================= 🔵 LEVEL 2: INTERMEDIATE (11-20) =================
     { id: 11, title: "Deepfake Image Detection", category: "Level 2: Intermediate", questions: [] },
