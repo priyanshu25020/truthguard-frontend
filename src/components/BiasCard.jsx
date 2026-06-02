@@ -1,6 +1,9 @@
 import React from 'react';
 
-const BiasCard = () => {
+const BiasCard = ({ negative = 0, neutral = 0, positive = 0 }) => {
+  // Agar values nahi hain (0,0,0), tab outline gray dikhane ke liye
+  const isAwaiting = negative === 0 && neutral === 0 && positive === 0;
+
   return (
     <div className="bg-gradient-to-br from-pink-900/20 to-[#05040a] border border-pink-500/20 rounded-[20px] p-6 shadow-[inset_0_0_30px_rgba(236,72,153,0.08)] hover:border-pink-500/40 transition-all duration-300 h-full">
       
@@ -14,20 +17,32 @@ const BiasCard = () => {
       
       <div className="flex items-center justify-between gap-4">
         
-        {/* Custom SVG Donut Chart (Exact 2nd Image Match) */}
+        {/* Dynamic SVG Donut Chart */}
         <div className="relative w-[72px] h-[72px] flex-shrink-0 drop-shadow-[0_0_12px_rgba(239,68,68,0.2)]">
           <svg viewBox="0 0 100 100" className="w-full h-full transform -rotate-90">
-            {/* Negative: 68% (Red) */}
-            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f43f5e" strokeWidth="18" strokeDasharray="65 35" strokeDashoffset="0" pathLength="100" />
-            
-            {/* Neutral: 22% (Purple) */}
-            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#6366f1" strokeWidth="18" strokeDasharray="20 80" strokeDashoffset="-67" pathLength="100" />
-            
-            {/* Positive: 10% (Green) */}
-            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#10b981" strokeWidth="18" strokeDasharray="9 91" strokeDashoffset="-89" pathLength="100" />
+            {isAwaiting ? (
+              // Blank State (Awaiting analysis)
+              <circle cx="50" cy="50" r="40" fill="transparent" stroke="#1e293b" strokeWidth="18" strokeDasharray="100 0" pathLength="100" />
+            ) : (
+              <>
+                {/* Negative (Red) */}
+                <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f43f5e" strokeWidth="18" 
+                  strokeDasharray={`${Math.max(0, negative - 3)} 100`} 
+                  strokeDashoffset="0" pathLength="100" className="transition-all duration-1000" />
+                
+                {/* Neutral (Purple) */}
+                <circle cx="50" cy="50" r="40" fill="transparent" stroke="#6366f1" strokeWidth="18" 
+                  strokeDasharray={`${Math.max(0, neutral - 3)} 100`} 
+                  strokeDashoffset={`-${negative}`} pathLength="100" className="transition-all duration-1000" />
+                
+                {/* Positive (Green) */}
+                <circle cx="50" cy="50" r="40" fill="transparent" stroke="#10b981" strokeWidth="18" 
+                  strokeDasharray={`${Math.max(0, positive - 3)} 100`} 
+                  strokeDashoffset={`-${negative + neutral}`} pathLength="100" className="transition-all duration-1000" />
+              </>
+            )}
           </svg>
           
-          {/* Inner dark circle for 3D depth */}
           <div className="absolute inset-0 m-auto w-10 h-10 bg-[#090712] rounded-full shadow-[inset_0_0_10px_rgba(0,0,0,0.9)]"></div>
         </div>
 
@@ -35,26 +50,23 @@ const BiasCard = () => {
         <div className="flex-1 space-y-3 text-[12px] font-bold">
           <div className="flex justify-between items-center group cursor-pointer">
             <span className="flex items-center gap-2 text-[#e2e8f0] group-hover:text-rose-400 transition">
-              <span className="w-2.5 h-2.5 bg-[#f43f5e] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.8)]"></span> 
-              Negative
+              <span className="w-2.5 h-2.5 bg-[#f43f5e] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.8)]"></span> Negative
             </span> 
-            <span className="text-[#94a3b8] group-hover:text-rose-400 transition">68% <span className="text-[10px]">»</span></span>
+            <span className="text-[#94a3b8] group-hover:text-rose-400 transition">{negative}% <span className="text-[10px]">»</span></span>
           </div>
           
           <div className="flex justify-between items-center group cursor-pointer">
             <span className="flex items-center gap-2 text-[#e2e8f0] group-hover:text-indigo-400 transition">
-              <span className="w-2.5 h-2.5 bg-[#6366f1] rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]"></span> 
-              Neutral
+              <span className="w-2.5 h-2.5 bg-[#6366f1] rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]"></span> Neutral
             </span> 
-            <span className="text-[#94a3b8] group-hover:text-indigo-400 transition">22% <span className="text-[10px]">»</span></span>
+            <span className="text-[#94a3b8] group-hover:text-indigo-400 transition">{neutral}% <span className="text-[10px]">»</span></span>
           </div>
           
           <div className="flex justify-between items-center group cursor-pointer">
             <span className="flex items-center gap-2 text-[#e2e8f0] group-hover:text-emerald-400 transition">
-              <span className="w-2.5 h-2.5 bg-[#10b981] rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span> 
-              Positive
+              <span className="w-2.5 h-2.5 bg-[#10b981] rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span> Positive
             </span> 
-            <span className="text-[#94a3b8] group-hover:text-emerald-400 transition">10% <span className="text-[10px]">»</span></span>
+            <span className="text-[#94a3b8] group-hover:text-emerald-400 transition">{positive}% <span className="text-[10px]">»</span></span>
           </div>
         </div>
 

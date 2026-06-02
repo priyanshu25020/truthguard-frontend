@@ -13,6 +13,7 @@ import AlertsTrends from "./pages/AlertsTrends.jsx";
 import Quizzes from "./pages/Quizzes.jsx";
 import Settings from "./pages/Settings.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
+
 // 🔥 Refresh ya Tab close hone par Guest Session completely uda dega
 window.addEventListener("beforeunload", () => {
   if (sessionStorage.getItem('token') === 'guest-session') {
