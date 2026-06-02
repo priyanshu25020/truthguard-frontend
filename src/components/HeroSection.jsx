@@ -59,7 +59,7 @@ const HeroSection = ({ onAnalysisComplete }) => {
 
       <div className="relative z-10 w-full md:w-2/3">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-white tracking-wide drop-shadow-md">
-          Hello, Cyber Explorer! 👋
+          Welcome to 🛡️ TruthGuard AI
         </h2>
         <p className="text-[#94a3b8] mb-8 text-sm md:text-base font-medium">
           Let's separate <span className="text-[#4ade80] font-bold">Facts</span> from <span className="text-[#f87171] font-bold">Fiction</span> with AI.
