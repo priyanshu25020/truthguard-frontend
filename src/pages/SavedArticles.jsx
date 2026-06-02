@@ -215,8 +215,9 @@ const SavedArticles = () => {
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="flex gap-2 mb-4">
                     <span className="px-2.5 py-1 text-[10px] font-bold text-blue-400 bg-blue-500/10 border border-blue-500/20 rounded-lg">{article.category}</span>
+                    {/* 🔥 YAHAN FIX KIYA HAI: article.status pe ? lagaya aur fallback diya */}
                     <span className={`px-2.5 py-1 text-[10px] font-bold rounded-lg border ${articleIsFake ? 'text-red-400 bg-red-500/10 border-red-500/20' : 'text-green-400 bg-green-500/10 border-green-500/20'}`}>
-                      {article.status.toUpperCase()} ({article.confidence || 0}%)
+                      {article.status?.toUpperCase() || 'UNVERIFIED'} ({article.confidence || 0}%)
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-4 line-clamp-2 leading-snug">{article.headline}</h3>
@@ -371,7 +372,8 @@ const SavedArticles = () => {
                <div className={`${glassCardStyle}`}>
   <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
   <h3 className="text-blue-400 font-bold text-sm uppercase tracking-widest mb-8 flex items-center gap-2">
-    ... ANALYSIS BREAKDOWN
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
+    ANALYSIS BREAKDOWN
                   </h3>
                   
                   <div className="flex flex-row items-center justify-between gap-10">
@@ -447,8 +449,8 @@ const SavedArticles = () => {
                   
                   <div className="space-y-4">
                     {sources.map((src, i) => {
-                      // 🔥 STEP 3: Real Logos implementation via <img> tag
-                      const formattedName = src.name.toLowerCase().replace(/\s+/g, '');
+                      // 🔥 FIX: Added ? to safely handle missing name
+                      const formattedName = src.name?.toLowerCase().replace(/\s+/g, '') || 'default';
                       return (
                         <div key={i} className="flex justify-between items-center bg-black/20 p-3 rounded-2xl border border-white/5">
                           <div className="flex items-center gap-4">
@@ -461,7 +463,8 @@ const SavedArticles = () => {
                               />
                               {/* Fallback if logo image is missing locally */}
                               <div className="hidden w-full h-full bg-gray-800 rounded-full items-center justify-center text-white font-black text-lg">
-                                {src.name.charAt(0)}
+                                {/* 🔥 FIX: Added ? to safely handle charAt */}
+                                {src.name?.charAt(0) || 'S'}
                               </div>
                             </div>
                             <div>
