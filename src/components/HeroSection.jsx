@@ -15,7 +15,7 @@ const HeroSection = ({ onAnalysisComplete }) => {
     setIsLoading(true);
     try {
       // Frontend se Backend (localhost:5000) ko request bhej rahe hain
-      const response = await axios.post('http://localhost:5000/api/analyze', {
+     const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/analyze`,{
         content: inputValue,
         type: "text" 
       });

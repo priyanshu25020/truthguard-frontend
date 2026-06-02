@@ -86,7 +86,7 @@ const AnalyzeNews = () => {
       }
 
       setLoadingStatus('Scanning Matrix...');
-      const response = await axios.post("http://localhost:5000/api/analyze", {
+     const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/analyze`, {
         content: textToAnalyze,
       });
       

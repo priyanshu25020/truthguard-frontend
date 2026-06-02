@@ -92,9 +92,9 @@ const AlertsTrends = () => {
         }`;
 
         const response = await axios.post(
-          "http://localhost:5000/api/threat-report",
-          { prompt }
-        );
+  `${import.meta.env.VITE_BACKEND_URL}/api/threat-report`,
+  { prompt }
+);
 
         const generatedData = JSON.parse(response.data.choices[0].message.content);
         
