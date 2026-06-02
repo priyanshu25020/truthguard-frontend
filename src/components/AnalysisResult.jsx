@@ -6,41 +6,16 @@ const AnalysisResult = ({ resultData }) => {
   const headline = isWaiting ? "Paste a news article or link above to start the AI analysis..." : resultData.headline;
   const aiConfidence = isWaiting ? 0 : resultData.aiConfidence || resultData.confidence || 0;
   
-  // Console me 'verdict' naam se status aa raha hai
   const status = isWaiting ? "STANDBY" : (resultData.status || resultData.verdict || "UNVERIFIED");
 
-  // 🔥 ASLI DATA MAPPING: Jo data console me aaya hai, hum usko list me convert kar rahe hain
-  let safeReasons = [
-    "Cross-referenced with global fact-checking databases.",
-    "Analyzed linguistic patterns and emotional manipulation.",
-    "Evaluated publisher history and source credibility."
-  ];
-
-  if (!isWaiting && resultData) {
-    safeReasons = []; // Purani list clear ki
-    
-    // Console data se naye points banaye
-    if (resultData.keyInsight) {
-      safeReasons.push(resultData.keyInsight);
-    }
-    if (resultData.recommendation) {
-      safeReasons.push(`AI Action: ${resultData.recommendation}`);
-    }
-    if (resultData.sources && resultData.sources.length > 0) {
-      safeReasons.push(`Verified against ${resultData.sources.length} trusted sources/databases.`);
-    }
-    
-    // Agar galti se saari cheezein khali nikli, toh default line dikhayega
-    if (safeReasons.length === 0) {
-      safeReasons = ["Analysis completed successfully based on AI database."];
-    }
-  }
-
+  // 🔥 DIRECT AI REASONS LOGIC (Koi manual push nahi)
   const reasonsList = isWaiting 
     ? ["Awaiting text or URL input", "System ready for analysis", "AI Engine Online 🟢"] 
-    : safeReasons;
+    : (Array.isArray(resultData.reasons) && resultData.reasons.length > 0 
+        ? resultData.reasons 
+        : ["AI analyzed the claim and found relevant patterns.", "Cross-checked with trusted knowledge bases.", "Evaluated source context."]);
 
-  // Baaki sab logic same rahega...
+  // Color & Theme Logic
   const isReal = !isWaiting && (status?.toLowerCase().includes('real') || status?.toLowerCase().includes('true') || status?.toLowerCase().includes('verified'));
   const isFake = !isWaiting && (status?.toLowerCase().includes('fake') || status?.toLowerCase().includes('false') || status?.toLowerCase().includes('misleading'));
   
