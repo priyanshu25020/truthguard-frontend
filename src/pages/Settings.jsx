@@ -7,14 +7,15 @@ const Settings = () => {
   const [sensitivity, setSensitivity] = useState(50);
   const [notifications, setNotifications] = useState(true);
   
-  // 🔥 1. "Real" Local Storage States for Toggles
   const [autoScan, setAutoScan] = useState(() => JSON.parse(localStorage.getItem('truthGuard_autoScan')) || false);
   const [privacyMode, setPrivacyMode] = useState(() => JSON.parse(localStorage.getItem('truthGuard_privacyMode')) || true);
   
-  // 🔥 2. State for Upgrade Modal
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  
+  // 🔥 NAYE STATES: Payment Scanner ke liye
+  const [showScanner, setShowScanner] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState({ name: '', price: 0 });
 
-  // Toggle Handlers (Ab ye Real ban gaye hain)
   const handleAutoScanToggle = () => {
     const newVal = !autoScan;
     setAutoScan(newVal);
@@ -30,7 +31,6 @@ const Settings = () => {
     else alert("Incognito Mode OFF: Scan history will be saved locally.");
   };
 
-  // 🔥 3. Email Configuration Logic
   const handleConfigureEmail = () => {
     const currentEmail = localStorage.getItem('truthGuard_reportEmail') || "";
     const email = window.prompt("Enter your email address to receive weekly AI fact-check reports:", currentEmail);
@@ -56,6 +56,19 @@ const Settings = () => {
       localStorage.removeItem('userName');
       navigate('/auth');
     }
+  };
+
+  // 🔥 NAYA FUNCTION: Plan select karne par
+  const handlePlanSelect = (planName, price) => {
+    setSelectedPlan({ name: planName, price: price });
+    setShowScanner(true);
+  };
+
+  // 🔥 NAYA FUNCTION: Fake Payment Success Simulation
+  const handlePaymentSuccess = () => {
+    alert(`🎉 Payment of ₹${selectedPlan.price} Successful! Welcome to ${selectedPlan.name} Pro.`);
+    setShowScanner(false);
+    setShowUpgradeModal(false);
   };
 
   return (
@@ -170,7 +183,6 @@ const Settings = () => {
                   <h4 className="text-sm font-bold text-gray-200">Weekly Email Report</h4>
                   <p className="text-[11px] text-gray-500 mt-0.5">Summary of your fact-checking activity.</p>
                 </div>
-                {/* 🔥 Email Configure Action */}
                 <button onClick={handleConfigureEmail} className="text-xs font-bold text-blue-400 hover:text-blue-300 underline">Configure</button>
               </div>
             </div>
@@ -190,7 +202,6 @@ const Settings = () => {
                 <div className="bg-gradient-to-r from-purple-500 to-blue-500 h-1.5 rounded-full" style={{ width: '42%' }}></div>
               </div>
             </div>
-            {/* 🔥 Show Modal Action */}
             <button 
               onClick={() => setShowUpgradeModal(true)}
               className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-3 rounded-xl transition-all shadow-[0_0_20px_rgba(168,85,247,0.4)] relative z-10 flex justify-center items-center gap-2"
@@ -202,13 +213,12 @@ const Settings = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* 🚀 PRO UPGRADE MODAL (Perfect UI Match) */}
+      {/* 🚀 PRO UPGRADE MODAL */}
       {/* ========================================================================= */}
       {showUpgradeModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030207]/90 backdrop-blur-sm p-4">
           <div className="bg-[#0b0816] border border-white/10 rounded-3xl w-full max-w-5xl p-8 relative shadow-[0_0_80px_rgba(168,85,247,0.15)] overflow-y-auto max-h-[95vh] custom-scrollbar">
             
-            {/* Close Button */}
             <button 
               onClick={() => setShowUpgradeModal(false)}
               className="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
@@ -216,14 +226,13 @@ const Settings = () => {
               ✕
             </button>
 
-            {/* Header */}
             <div className="flex items-start justify-between mb-10">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-purple-600/20 rounded-2xl border border-purple-500/30 flex items-center justify-center text-2xl shadow-[0_0_20px_rgba(168,85,247,0.3)]">
                   🚀
                 </div>
                 <div>
-                  <h2 className="text-3xl font-extrabold text-white tracking-wide">Upgrade Your Plan(Comming soon)</h2>
+                  <h2 className="text-3xl font-extrabold text-white tracking-wide">Upgrade Your Plan</h2>
                   <p className="text-sm text-gray-400 mt-1">Unlock advanced AI power and unlimited access.</p>
                 </div>
               </div>
@@ -236,7 +245,6 @@ const Settings = () => {
               </div>
             </div>
 
-            {/* Pricing Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               
               {/* Monthly Plan */}
@@ -259,13 +267,16 @@ const Settings = () => {
                   <li className="flex justify-between items-center"><span className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center text-white text-[10px]">✓</div> Email Reports</span> <span className="text-gray-400 text-xs">Weekly</span></li>
                   <li className="flex justify-between items-center"><span className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-blue-500 flex items-center justify-center text-white text-[10px]">✓</div> Support</span> <span className="text-gray-400 text-xs">Standard</span></li>
                 </ul>
-                <button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-3.5 rounded-xl transition-all mb-3 text-sm flex justify-center items-center gap-2">
+                <button 
+                  onClick={() => handlePlanSelect('Monthly Plan', 100)} 
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-bold py-3.5 rounded-xl transition-all mb-3 text-sm flex justify-center items-center gap-2"
+                >
                   Choose Monthly <span className="text-lg leading-none">→</span>
                 </button>
                 <p className="text-[10px] text-center text-blue-400 font-medium">🛡️ Billed ₹100 every month</p>
               </div>
 
-              {/* 3 Month Plan (Highlighted) */}
+              {/* 3 Month Plan */}
               <div className="bg-[#1a113a] border border-purple-500 rounded-3xl p-6 flex flex-col relative shadow-[0_0_30px_rgba(168,85,247,0.2)] scale-105 z-10">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
                   <span>★</span> Most Popular
@@ -291,7 +302,10 @@ const Settings = () => {
                   <li className="flex justify-between items-center"><span className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-purple-500 flex items-center justify-center text-white text-[10px]">✓</div> Email Reports</span> <span className="text-gray-300 text-xs">Weekly</span></li>
                   <li className="flex justify-between items-center"><span className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-purple-500 flex items-center justify-center text-white text-[10px]">✓</div> Support</span> <span className="text-purple-300 font-bold text-xs">Priority</span></li>
                 </ul>
-                <button className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-bold py-3.5 rounded-xl transition-all mb-3 text-sm shadow-[0_0_15px_rgba(168,85,247,0.4)] flex justify-center items-center gap-2">
+                <button 
+                  onClick={() => handlePlanSelect('3 Month Plan', 259)}
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-bold py-3.5 rounded-xl transition-all mb-3 text-sm shadow-[0_0_15px_rgba(168,85,247,0.4)] flex justify-center items-center gap-2"
+                >
                   Choose 3 Month Plan <span className="text-lg leading-none">→</span>
                 </button>
                 <p className="text-[10px] text-center text-purple-400 font-medium">🛡️ Billed ₹259 every 3 months</p>
@@ -323,47 +337,17 @@ const Settings = () => {
                   <li className="flex justify-between items-center"><span className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px]">✓</div> Email Reports</span> <span className="text-gray-400 text-xs">Daily</span></li>
                   <li className="flex justify-between items-center"><span className="flex items-center gap-2"><div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px]">✓</div> Support</span> <span className="text-gray-400 text-xs">24/7 Priority</span></li>
                 </ul>
-                <button className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold py-3.5 rounded-xl transition-all mb-3 text-sm flex justify-center items-center gap-2">
+                <button 
+                  onClick={() => handlePlanSelect('1 Year Plan', 1099)}
+                  className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-400 text-white font-bold py-3.5 rounded-xl transition-all mb-3 text-sm flex justify-center items-center gap-2"
+                >
                   Choose Yearly Plan <span className="text-lg leading-none">→</span>
                 </button>
                 <p className="text-[10px] text-center text-green-400 font-medium">🛡️ Billed ₹1099 every year</p>
               </div>
             </div>
 
-            {/* Info Footer Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-b border-white/10 py-6 mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl border border-purple-500/20 shrink-0">∞</div>
-                <div>
-                  <h4 className="text-[11px] font-bold text-white">Unlimited Potential</h4>
-                  <p className="text-[10px] text-gray-500 leading-tight">Remove limits and scan without boundaries.</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl border border-blue-500/20 shrink-0">🛡️</div>
-                <div>
-                  <h4 className="text-[11px] font-bold text-white">Enterprise Security</h4>
-                  <p className="text-[10px] text-gray-500 leading-tight">Bank-level encryption keeps your data safe.</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl border border-cyan-500/20 shrink-0">⏱️</div>
-                <div>
-                  <h4 className="text-[11px] font-bold text-white">Save Time</h4>
-                  <p className="text-[10px] text-gray-500 leading-tight">Faster scans, smarter results, better decisions.</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 text-xl border border-green-500/20 shrink-0">🎖️</div>
-                <div>
-                  <h4 className="text-[11px] font-bold text-white">Cancel Anytime</h4>
-                  <p className="text-[10px] text-gray-500 leading-tight">Change or cancel your plan anytime you want.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Payments Info */}
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center mt-6 border-t border-white/10 pt-6">
               <p className="text-[11px] text-gray-400 flex items-center gap-1.5 mb-3">
                 <span className="text-gray-500">🔒</span> Secure payments. Cancel anytime. No hidden charges.
               </p>
@@ -379,7 +363,63 @@ const Settings = () => {
           </div>
         </div>
       )}
-      
+
+      {/* ========================================================================= */}
+      {/* 💳 SECURE PAYMENT SCANNER MODAL (Fixed Price, Uneditable) */}
+      {/* ========================================================================= */}
+      {showScanner && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-[#030207]/95 backdrop-blur-md p-4">
+          <div className="bg-[#0b0816] border border-blue-500/30 rounded-3xl w-full max-w-sm p-6 relative shadow-[0_0_80px_rgba(59,130,246,0.2)] text-center">
+            
+            <button 
+              onClick={() => setShowScanner(false)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+            >
+              ✕
+            </button>
+
+            <h3 className="text-xl font-bold text-white mb-1">Secure Checkout</h3>
+            <p className="text-xs text-gray-400 mb-6">Scan QR code with any UPI app</p>
+
+            {/* Read-Only Amount Display */}
+            <div className="bg-[#05040a] border border-white/10 rounded-2xl p-4 mb-6">
+              <p className="text-[11px] text-gray-500 uppercase tracking-widest font-bold mb-1">{selectedPlan.name}</p>
+              <div className="flex items-center justify-center gap-1">
+                <span className="text-gray-400 text-xl font-bold">₹</span>
+                {/* 🔥 Input disabled hai, user isko change nahi kar sakta 🔥 */}
+                <input 
+                  type="text" 
+                  value={selectedPlan.price} 
+                  readOnly 
+                  className="bg-transparent text-4xl font-black text-white text-center w-28 outline-none pointer-events-none"
+                />
+              </div>
+            </div>
+
+            {/* Realistic QR Code Box */}
+            <div className="bg-white p-4 rounded-2xl inline-block mb-6 border-4 border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+              {/* Dynamic QR API se realistic QR */}
+              <img 
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=truthguard@upi&pn=TruthGuard&am=${selectedPlan.price}&cu=INR`} 
+                alt="Payment QR" 
+                className="w-32 h-32"
+              />
+            </div>
+
+            <p className="text-[10px] text-blue-400 font-bold uppercase tracking-widest mb-6 flex items-center justify-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse"></span> Waiting for payment...
+            </p>
+
+            <button 
+              onClick={handlePaymentSuccess}
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3.5 rounded-xl transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] text-sm"
+            >
+              Simulate Successful Payment
+            </button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

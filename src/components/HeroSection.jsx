@@ -14,8 +14,8 @@ const HeroSection = ({ onAnalysisComplete }) => {
 
     setIsLoading(true);
     try {
-      // Frontend se Backend (localhost:5000) ko request bhej rahe hain
-     const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/analyze`,{
+      // Frontend se Backend ko request bhej rahe hain
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/analyze`,{
         content: inputValue,
         type: "text" 
       });
@@ -27,13 +27,14 @@ const HeroSection = ({ onAnalysisComplete }) => {
          onAnalysisComplete(response.data);
       }
 
-      // 🔥 HOME PAGE WALI HISTORY SAVING 🔥 (Yahan add kiya hai aapka code)
+      // 🔥 YAHAN FIX KIYA HAI: Ab 'verdict' properly save hoga 🔥
       const newHistoryItem = {
         id: 'SCAN_0x' + Math.floor(Math.random() * 16777215).toString(16).toUpperCase().padStart(4, '0'),
         date: new Date().toISOString().split('T')[0],
         headline: response.data.headline || 'Home Page Scan',
         type: 'QUICK SCAN', 
-        status: response.data.status || 'Unknown',
+        verdict: response.data.verdict || 'Unknown', // Naya fix
+        status: response.data.verdict || response.data.status || 'Unknown', // Naya fix
         confidence: response.data.confidence || response.data.aiConfidence || 0
       };
 
@@ -41,7 +42,7 @@ const HeroSection = ({ onAnalysisComplete }) => {
       const updatedHistory = [newHistoryItem, ...existingHistory];
       localStorage.setItem('truthGuard_history', JSON.stringify(updatedHistory));
 
-      // 🔥 Yeh line baki sab components (jaise StatsCards) ko batayegi ki naya scan hua hai
+      // Yeh line baki sab components (jaise StatsCards) ko batayegi ki naya scan hua hai
       window.dispatchEvent(new Event('historyUpdated'));
 
     } catch (error) {

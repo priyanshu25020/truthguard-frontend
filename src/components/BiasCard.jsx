@@ -1,8 +1,19 @@
 import React from 'react';
 
 const BiasCard = ({ negative = 0, neutral = 0, positive = 0 }) => {
-  // Agar values nahi hain (0,0,0), tab outline gray dikhane ke liye
-  const isAwaiting = negative === 0 && neutral === 0 && positive === 0;
+  // 🔥 FIX 1: Strings ko Numbers mein convert kiya taaki math fail na ho
+  const neg = Number(negative) || 0;
+  const neu = Number(neutral) || 0;
+  const pos = Number(positive) || 0;
+
+  const isAwaiting = neg === 0 && neu === 0 && pos === 0;
+
+  // 🔥 FIX 2: Smart gap logic - sirf tabhi gap dega jab value > 2 ho
+  const getLength = (val) => val > 2 ? val - 2 : val;
+
+  // Offsets calculation
+  const neuOffset = neg;
+  const posOffset = neg + neu;
 
   return (
     <div className="bg-gradient-to-br from-pink-900/20 to-[#05040a] border border-pink-500/20 rounded-[20px] p-6 shadow-[inset_0_0_30px_rgba(236,72,153,0.08)] hover:border-pink-500/40 transition-all duration-300 h-full">
@@ -27,18 +38,18 @@ const BiasCard = ({ negative = 0, neutral = 0, positive = 0 }) => {
               <>
                 {/* Negative (Red) */}
                 <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f43f5e" strokeWidth="18" 
-                  strokeDasharray={`${Math.max(0, negative - 3)} 100`} 
+                  strokeDasharray={`${getLength(neg)} 100`} 
                   strokeDashoffset="0" pathLength="100" className="transition-all duration-1000" />
                 
                 {/* Neutral (Purple) */}
                 <circle cx="50" cy="50" r="40" fill="transparent" stroke="#6366f1" strokeWidth="18" 
-                  strokeDasharray={`${Math.max(0, neutral - 3)} 100`} 
-                  strokeDashoffset={`-${negative}`} pathLength="100" className="transition-all duration-1000" />
+                  strokeDasharray={`${getLength(neu)} 100`} 
+                  strokeDashoffset={`-${neuOffset}`} pathLength="100" className="transition-all duration-1000" />
                 
                 {/* Positive (Green) */}
                 <circle cx="50" cy="50" r="40" fill="transparent" stroke="#10b981" strokeWidth="18" 
-                  strokeDasharray={`${Math.max(0, positive - 3)} 100`} 
-                  strokeDashoffset={`-${negative + neutral}`} pathLength="100" className="transition-all duration-1000" />
+                  strokeDasharray={`${getLength(pos)} 100`} 
+                  strokeDashoffset={`-${posOffset}`} pathLength="100" className="transition-all duration-1000" />
               </>
             )}
           </svg>
@@ -52,21 +63,21 @@ const BiasCard = ({ negative = 0, neutral = 0, positive = 0 }) => {
             <span className="flex items-center gap-2 text-[#e2e8f0] group-hover:text-rose-400 transition">
               <span className="w-2.5 h-2.5 bg-[#f43f5e] rounded-full shadow-[0_0_8px_rgba(244,63,94,0.8)]"></span> Negative
             </span> 
-            <span className="text-[#94a3b8] group-hover:text-rose-400 transition">{negative}% <span className="text-[10px]">»</span></span>
+            <span className="text-[#94a3b8] group-hover:text-rose-400 transition">{neg}% <span className="text-[10px]">»</span></span>
           </div>
           
           <div className="flex justify-between items-center group cursor-pointer">
             <span className="flex items-center gap-2 text-[#e2e8f0] group-hover:text-indigo-400 transition">
               <span className="w-2.5 h-2.5 bg-[#6366f1] rounded-full shadow-[0_0_8px_rgba(99,102,241,0.8)]"></span> Neutral
             </span> 
-            <span className="text-[#94a3b8] group-hover:text-indigo-400 transition">{neutral}% <span className="text-[10px]">»</span></span>
+            <span className="text-[#94a3b8] group-hover:text-indigo-400 transition">{neu}% <span className="text-[10px]">»</span></span>
           </div>
           
           <div className="flex justify-between items-center group cursor-pointer">
             <span className="flex items-center gap-2 text-[#e2e8f0] group-hover:text-emerald-400 transition">
               <span className="w-2.5 h-2.5 bg-[#10b981] rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span> Positive
             </span> 
-            <span className="text-[#94a3b8] group-hover:text-emerald-400 transition">{positive}% <span className="text-[10px]">»</span></span>
+            <span className="text-[#94a3b8] group-hover:text-emerald-400 transition">{pos}% <span className="text-[10px]">»</span></span>
           </div>
         </div>
 

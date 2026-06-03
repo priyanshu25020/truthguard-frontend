@@ -575,7 +575,7 @@ const SavedArticles = () => {
                 {/* 🔥 STEP 8: Enhanced QR Card */}
                 <div className="bg-white/10 backdrop-blur-md p-5 rounded-2xl flex flex-col items-center border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.15)] shrink-0">
                   <div className="bg-white p-2 rounded-xl mb-3">
-                    <QRCodeSVG value={`https://truthguard.ai/report/${exportingArticle.id}`} size={100} />
+                    <QRCodeSVG value={`https://truthguard-intelligence.onrender.com`} size={100} />
                   </div>
                   <p className="text-xs text-white font-black uppercase tracking-widest mb-1">Scan to Verify</p>
                   <div className="w-full h-px bg-white/20 my-2"></div>

@@ -20,9 +20,22 @@ const StatsCards = () => {
       if (history.length > 0) {
         const total = history.length;
         
-        // Smart Filter: Uppercase/Lowercase ka chakkar khatam
-        const realCount = history.filter(item => item.status && item.status.toLowerCase() === 'real').length;
-        const fakeCount = history.filter(item => item.status && item.status.toLowerCase() === 'fake').length;
+        // 🔥 NAYA LOGIC: AI ke actual verdicts ke hisaab se check karega
+        const realCount = history.filter(item => 
+          item.status && (
+            item.status.toUpperCase().includes('REAL') || 
+            item.status.toUpperCase().includes('TRUE') || 
+            (item.status.toUpperCase().includes('VERIFIED') && !item.status.toUpperCase().includes('UNVERIFIED'))
+          )
+        ).length;
+        
+        const fakeCount = history.filter(item => 
+          item.status && (
+            item.status.toUpperCase().includes('FAKE') || 
+            item.status.toUpperCase().includes('FALSE') || 
+            item.status.toUpperCase().includes('UNVERIFIED')
+          )
+        ).length;
         
         // Confidence calculation (kisi bhi API response format ke liye)
         const totalConfidence = history.reduce((acc, item) => acc + (Number(item.aiConfidence || item.confidence) || 0), 0);
