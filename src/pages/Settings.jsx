@@ -396,11 +396,11 @@ const Settings = () => {
               </div>
             </div>
 
-            {/* Realistic QR Code Box */}
+           {/* Realistic QR Code Box */}
             <div className="bg-white p-4 rounded-2xl inline-block mb-6 border-4 border-blue-500/20 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
-              {/* Dynamic QR API se realistic QR */}
+              {/* Dynamic QR API with auto amount fill */}
               <img 
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=truthguard@upi&pn=TruthGuard&am=${selectedPlan.price}&cu=INR`} 
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dpriyanshubharadava27%40okicici%26pn%3DPriyanshu%20Bharadava%26am%3D${selectedPlan.price}%26cu%3DINR`} 
                 alt="Payment QR" 
                 className="w-32 h-32"
               />
