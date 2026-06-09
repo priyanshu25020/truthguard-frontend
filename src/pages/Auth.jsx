@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+// Baaki imports ke sath isko add karo
 import authHero from '../assets/auth-hero.png';
+import userManualPDF from '../assets/user-manual.pdf'; // 🔥 Yeh line add karni hai (naam apne hisaab se rakh lena)
 
 // 🔥 Google aur GitHub Login ke liye Firebase imports
 import { auth, googleProvider, githubProvider } from '../firebase'; // githubProvider import kiya
@@ -12,7 +14,31 @@ const Auth = () => {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+// 🔥 POP-UP LOGIC START
+    const [showManualPopup, setShowManualPopup] = useState(true);
 
+    useEffect(() => {
+        let timer;
+        if (showManualPopup) {
+            // 7 seconds ke baad pop-up automatically hide ho jayega
+            timer = setTimeout(() => {
+                setShowManualPopup(false);
+            }, 15000);
+        }
+        // Cleanup function taaki timer memory leak na kare
+        return () => clearTimeout(timer);
+    }, [showManualPopup]);
+
+    const handleProceedToManual = () => {
+        setShowManualPopup(false);
+        // 🔥 NAYA CODE: Naye tab me PDF open karega
+        window.open(userManualPDF, '_blank', 'noopener,noreferrer'); 
+    };
+
+    const handleSkipManual = () => {
+        setShowManualPopup(false);
+    };
+    // 🔥 POP-UP LOGIC END
     const [realStats, setRealStats] = useState({
         streak: 0,
         quizzesTaken: 0,
@@ -126,12 +152,48 @@ const Auth = () => {
         alert(`${provider} Login integration coming soon! 🚀`);
     };
 
-    return (
+  return (
         <div
             className="min-h-screen text-white font-sans flex flex-col lg:flex-row overflow-hidden selection:bg-blue-500/30"
             style={{ background: "radial-gradient(circle at top left,#07122f,#030207 60%)" }}
         >
+            {/* 🔥 POP-UP UI START 🔥 */}
+            {showManualPopup && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030207]/80 backdrop-blur-sm p-4 transition-opacity duration-300">
+                    <div className="bg-[#0a0715] border border-cyan-500/30 p-8 rounded-2xl shadow-[0_0_40px_rgba(6,182,212,0.2)] max-w-md w-full text-center relative overflow-hidden">
+                        {/* Glowing Background Effects */}
+                        <div className="absolute -top-10 -left-10 w-32 h-32 bg-purple-600/20 blur-[50px] rounded-full"></div>
+                        <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-600/20 blur-[50px] rounded-full"></div>
+                        
+                        <div className="w-16 h-16 mx-auto bg-[#05040a] border border-cyan-500/50 rounded-full flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(6,182,212,0.4)] relative z-10">
+                            <span className="text-3xl">📖</span>
+                        </div>
+                        
+                        <h2 className="text-2xl font-bold text-white mb-3 relative z-10">Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">TruthGuard AI</span></h2>
+                        <p className="text-sm text-gray-400 mb-8 relative z-10">
+                            For the best experience, we recommend reviewing our quick User Manual to understand the AI Verification Engine.
+                        </p>
+                        
+                        <div className="flex gap-4 justify-center relative z-10">
+                            <button 
+                                onClick={handleSkipManual}
+                                className="px-6 py-2.5 rounded-xl text-xs font-bold text-gray-300 border border-white/10 hover:border-white/30 hover:bg-white/5 transition-all"
+                            >
+                                SKIP
+                            </button>
+                            <button 
+                                onClick={handleProceedToManual}
+                                className="px-6 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 shadow-[0_0_15px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-0.5 flex items-center gap-2"
+                            >
+                                PROCEED TO MANUAL <span className="text-lg leading-none">›</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {/* 🔥 POP-UP UI END 🔥 */}
 
+            {/* ================= LEFT PANEL (Tumhara bacha hua code yahan se waisa hi rahega) ================= */}
             {/* ================= LEFT PANEL ================= */}
             <div className="lg:w-[52%] p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden hidden md:flex border-r border-blue-900/30">
 
@@ -221,11 +283,30 @@ const Auth = () => {
                 </div>
             </div>
 
-            {/* ================= RIGHT PANEL ================= */}
+          {/* ================= RIGHT PANEL ================= */}
             <div className="lg:w-[48%] flex flex-col items-center justify-center p-6 lg:p-12 relative z-10">
 
                 <div className="w-full max-w-[650px] bg-[#0a0715]/90 border border-white/10 rounded-[32px] p-8 shadow-[0_0_40px_rgba(59,130,246,0.15)] relative">
 
+                    {/* 🔥 NAYA: PERMANENT USER MANUAL BUTTON START 🔥 */}
+                    <button
+                        type="button"
+                        onClick={() => window.open(userManualPDF, '_blank', 'noopener,noreferrer')}
+                        className="absolute top-2 right-2 group flex items-center justify-center w-10 h-10 bg-[#05040a] border border-cyan-500/30 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.1)] hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all z-20 cursor-pointer"
+                    >
+                        {/* Book Icon SVG */}
+                        <svg className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        
+                        {/* Tooltip Hover Effect */}
+                        <span className="absolute -top-8 right-0 bg-cyan-900/90 border border-cyan-500/50 text-cyan-100 text-[10px] font-bold px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+                            View User Manual
+                        </span>
+                    </button>
+                    {/* 🔥 PERMANENT USER MANUAL BUTTON END 🔥 */}
+
+                    
                     <div className="flex items-center justify-between border border-white/5 bg-[#05040a] rounded-xl p-3 mb-8">
                         <div className="flex items-center gap-4">
                             <div>
