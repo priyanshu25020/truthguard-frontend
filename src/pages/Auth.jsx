@@ -154,9 +154,10 @@ const Auth = () => {
 
   return (
         <div
-            className="min-h-screen text-white font-sans flex flex-col lg:flex-row overflow-hidden selection:bg-blue-500/30"
-            style={{ background: "radial-gradient(circle at top left,#07122f,#030207 60%)" }}
-        >
+           
+    className="min-h-screen text-white font-sans flex flex-col lg:flex-row overflow-x-hidden overflow-y-auto selection:bg-blue-500/30"
+    style={{ background: "radial-gradient(circle at top left,#07122f,#030207 60%)" }}
+>
             {/* 🔥 POP-UP UI START 🔥 */}
             {showManualPopup && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#030207]/80 backdrop-blur-sm p-4 transition-opacity duration-300">
@@ -284,9 +285,9 @@ const Auth = () => {
             </div>
 
           {/* ================= RIGHT PANEL ================= */}
-            <div className="lg:w-[48%] flex flex-col items-center justify-center p-6 lg:p-12 relative z-10">
+            <div className="w-full lg:w-[48%] flex flex-col items-center justify-center p-4 sm:p-6 lg:p-12 relative z-10 py-10 lg:py-0">
 
-                <div className="w-full max-w-[650px] bg-[#0a0715]/90 border border-white/10 rounded-[32px] p-8 shadow-[0_0_40px_rgba(59,130,246,0.15)] relative">
+                <div className="w-full max-w-[650px] bg-[#0a0715]/90 border border-white/10 rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 shadow-[0_0_40px_rgba(59,130,246,0.15)] relative">
 
                     {/* 🔥 NAYA: PERMANENT USER MANUAL BUTTON START 🔥 */}
                     <button
@@ -413,7 +414,7 @@ const Auth = () => {
                         <div className="h-px bg-white/10 flex-grow"></div>
                     </div>
 
-                 <div className="grid grid-cols-3 gap-3 max-w-[420px] mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[420px] mx-auto w-full">
                         {/* 🔥 Google Button (Permanent Blue Glow) */}
                         <button
                             onClick={handleGoogleLogin}
