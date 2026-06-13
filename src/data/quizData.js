@@ -1131,10 +1131,471 @@ export const quizSections = [
 
     // ================= 🔵 LEVEL 2: INTERMEDIATE (11-20) =================
     { id: 11, title: "Deepfake Image Detection", category: "Level 2: Intermediate", questions: [] },
-    { id: 12, title: "Fake Statistics & Numbers", category: "Level 2: Intermediate", questions: [] },
-    { id: 13, title: "Political Misinformation", category: "Level 2: Intermediate", questions: [] },
-    { id: 14, title: "Health & Medical Myths", category: "Level 2: Intermediate", questions: [] },
-    { id: 15, title: "Science News Verification", category: "Level 2: Intermediate", questions: [] },
+    {
+  id: 12,
+  title: "Deepfake Image Detection",
+  category: "Level 2: Intermediate",
+  questions: [
+    {
+      question: "Which sign may indicate an image is a deepfake?",
+      options: [
+        { id: 'A', text: "Natural lighting" },
+        { id: 'B', text: "Consistent shadows" },
+        { id: 'C', text: "Distorted facial features" },
+        { id: 'D', text: "Clear background" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Deepfakes often contain facial distortions or inconsistencies."
+    },
+    {
+      question: "What should you check first when verifying an image?",
+      options: [
+        { id: 'A', text: "Source of the image" },
+        { id: 'B', text: "Number of likes" },
+        { id: 'C', text: "Comments" },
+        { id: 'D', text: "Font size" }
+      ],
+      correctAnswer: 'A',
+      explanation: "The original source is important for verification."
+    },
+    {
+      question: "Which feature is commonly flawed in deepfake images?",
+      options: [
+        { id: 'A', text: "Sky color" },
+        { id: 'B', text: "Building shapes" },
+        { id: 'C', text: "Road markings" },
+        { id: 'D', text: "Hands and fingers" }
+      ],
+      correctAnswer: 'D',
+      explanation: "AI often struggles to generate realistic hands."
+    },
+    {
+      question: "What tool can help verify an image?",
+      options: [
+        { id: 'A', text: "Reverse image search" },
+        { id: 'B', text: "Music player" },
+        { id: 'C', text: "Calculator" },
+        { id: 'D', text: "Video editor" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Reverse image search helps trace image origins."
+    },
+    {
+      question: "Which clue suggests AI image generation?",
+      options: [
+        { id: 'A', text: "Correct spelling everywhere" },
+        { id: 'B', text: "Garbled or unreadable text" },
+        { id: 'C', text: "High resolution" },
+        { id: 'D', text: "Landscape orientation" }
+      ],
+      correctAnswer: 'B',
+      explanation: "AI-generated images often contain distorted text."
+    },
+    {
+      question: "Why are deepfakes dangerous?",
+      options: [
+        { id: 'A', text: "They reduce internet speed" },
+        { id: 'B', text: "They spread misinformation" },
+        { id: 'C', text: "They damage cameras" },
+        { id: 'D', text: "They increase storage usage" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Deepfakes can mislead people with false content."
+    },
+    {
+      question: "Which area should be inspected closely in suspected deepfakes?",
+      options: [
+        { id: 'A', text: "Eyes and facial edges" },
+        { id: 'B', text: "Weather conditions" },
+        { id: 'C', text: "Road signs" },
+        { id: 'D', text: "Trees" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Facial inconsistencies are common deepfake indicators."
+    },
+    {
+      question: "What is a common deepfake verification technique?",
+      options: [
+        { id: 'A', text: "Checking battery percentage" },
+        { id: 'B', text: "Analyzing metadata" },
+        { id: 'C', text: "Changing brightness" },
+        { id: 'D', text: "Rotating image" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Metadata can reveal image origins and edits."
+    },
+    {
+      question: "Which image is more trustworthy?",
+      options: [
+        { id: 'A', text: "Anonymous image with no source" },
+        { id: 'B', text: "Image from verified news agency" },
+        { id: 'C', text: "Random social media upload" },
+        { id: 'D', text: "Edited screenshot" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Verified sources are generally more reliable."
+    },
+    {
+      question: "What should you do before sharing a suspicious image?",
+      options: [
+        { id: 'A', text: "Verify authenticity" },
+        { id: 'B', text: "Add emojis" },
+        { id: 'C', text: "Crop the image" },
+        { id: 'D', text: "Increase contrast" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Verification helps prevent misinformation."
+    }
+  ]
+},
+{ id: 13, title: "Political Misinformation", category: "Level 2: Intermediate", questions: [
+
+    {
+      question: "Which statistic should raise suspicion?",
+      options: [
+        { id: 'A', text: "99.9% of people became millionaires overnight" },
+        { id: 'B', text: "Population increased by 2%" },
+        { id: 'C', text: "Survey included 1000 participants" },
+        { id: 'D', text: "Rainfall increased slightly" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Extraordinary claims require strong evidence."
+    },
+    {
+      question: "What should accompany trustworthy statistics?",
+      options: [
+        { id: 'A', text: "Memes" },
+        { id: 'B', text: "Reliable source" },
+        { id: 'C', text: "Advertisements" },
+        { id: 'D', text: "Emojis" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Reliable sources improve credibility."
+    },
+    {
+      question: "Which claim is most likely misleading?",
+      options: [
+        { id: 'A', text: "Study of 10,000 participants" },
+        { id: 'B', text: "Government census report" },
+        { id: 'C', text: "100% success guaranteed for everyone" },
+        { id: 'D', text: "University survey results" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Absolute guarantees are often misleading."
+    },
+    {
+      question: "Why is sample size important?",
+      options: [
+        { id: 'A', text: "It affects reliability" },
+        { id: 'B', text: "It changes font size" },
+        { id: 'C', text: "It increases internet speed" },
+        { id: 'D', text: "It affects image quality" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Larger samples are usually more reliable."
+    },
+    {
+      question: "What is a red flag in statistics?",
+      options: [
+        { id: 'A', text: "Cited source" },
+        { id: 'B', text: "Methodology provided" },
+        { id: 'C', text: "No source mentioned" },
+        { id: 'D', text: "Research institution listed" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Statistics without sources are questionable."
+    },
+    {
+      question: "What should you verify about a statistic?",
+      options: [
+        { id: 'A', text: "Source and context" },
+        { id: 'B', text: "Background color" },
+        { id: 'C', text: "Logo design" },
+        { id: 'D', text: "Page length" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Context is essential for understanding data."
+    },
+    {
+      question: "Which statistic seems unrealistic?",
+      options: [
+        { id: 'A', text: "15% growth this year" },
+        { id: 'B', text: "Everyone on Earth agrees completely" },
+        { id: 'C', text: "Survey conducted nationally" },
+        { id: 'D', text: "Research published online" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Universal agreement is extremely unlikely."
+    },
+    {
+      question: "What can misleading graphs do?",
+      options: [
+        { id: 'A', text: "Clarify information" },
+        { id: 'B', text: "Provide citations" },
+        { id: 'C', text: "Distort interpretation" },
+        { id: 'D', text: "Improve accuracy" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Graphs can exaggerate differences."
+    },
+    {
+      question: "Which source is most reliable?",
+      options: [
+        { id: 'A', text: "Anonymous post" },
+        { id: 'B', text: "Verified research institution" },
+        { id: 'C', text: "Random comment" },
+        { id: 'D', text: "Unverified screenshot" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Research institutions follow established methods."
+    },
+    {
+      question: "Why should percentages be checked carefully?",
+      options: [
+        { id: 'A', text: "They can lack context" },
+        { id: 'B', text: "They change file formats" },
+        { id: 'C', text: "They reduce storage" },
+        { id: 'D', text: "They affect battery life" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Percentages can be misleading without context."
+    }
+  ]
+ },
+    {
+  id: 14,
+  title: "Political Misinformation",
+  category: "Level 2: Intermediate",
+  questions: [
+    {
+      question: "What is the best way to verify a political claim?",
+      options: [
+        { id: 'A', text: "Check multiple reliable sources" },
+        { id: 'B', text: "Trust a viral post" },
+        { id: 'C', text: "Believe anonymous accounts" },
+        { id: 'D', text: "Share immediately" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Cross-checking multiple trusted sources helps verify political claims."
+    },
+    {
+      question: "Which source is most reliable for political information?",
+      options: [
+        { id: 'A', text: "Random social media account" },
+        { id: 'B', text: "Official government statement" },
+        { id: 'C', text: "Anonymous forwarded message" },
+        { id: 'D', text: "Unverified screenshot" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Official statements are generally more reliable than anonymous sources."
+    },
+    {
+      question: "Which headline is most likely misinformation?",
+      options: [
+        { id: 'A', text: "Election Results Released by Commission" },
+        { id: 'B', text: "Parliament Passes New Bill" },
+        { id: 'C', text: "SECRET PLOT EXPOSED! Democracy Ends Tomorrow!" },
+        { id: 'D', text: "Government Announces Budget Plan" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Sensational and unsupported claims are common signs of misinformation."
+    },
+    {
+      question: "What is a common goal of political misinformation?",
+      options: [
+        { id: 'A', text: "Improve education" },
+        { id: 'B', text: "Influence public opinion" },
+        { id: 'C', text: "Increase internet speed" },
+        { id: 'D', text: "Improve weather forecasts" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Political misinformation often aims to manipulate public opinion."
+    },
+    {
+      question: "What should you do before sharing political news?",
+      options: [
+        { id: 'A', text: "Verify the source" },
+        { id: 'B', text: "Forward instantly" },
+        { id: 'C', text: "Ignore the publication date" },
+        { id: 'D', text: "Trust only comments" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Verification helps prevent the spread of misinformation."
+    },
+    {
+      question: "Which is a warning sign of misleading political content?",
+      options: [
+        { id: 'A', text: "Cited evidence" },
+        { id: 'B', text: "Official documents" },
+        { id: 'C', text: "Extreme emotional language" },
+        { id: 'D', text: "Fact-check references" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Strong emotional language is often used to manipulate readers."
+    },
+    {
+      question: "Why should publication dates be checked?",
+      options: [
+        { id: 'A', text: "Old stories may be reused misleadingly" },
+        { id: 'B', text: "Dates affect image quality" },
+        { id: 'C', text: "Dates increase popularity" },
+        { id: 'D', text: "Dates change article fonts" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Old news can be reshared to create false impressions."
+    },
+    {
+      question: "Which post should be treated cautiously?",
+      options: [
+        { id: 'A', text: "Article with verified sources" },
+        { id: 'B', text: "Report from a trusted news outlet" },
+        { id: 'C', text: "Official election commission update" },
+        { id: 'D', text: "Anonymous claim with no evidence" }
+      ],
+      correctAnswer: 'D',
+      explanation: "Anonymous claims without evidence are unreliable."
+    },
+    {
+      question: "What is fact-checking?",
+      options: [
+        { id: 'A', text: "Verifying claims using evidence" },
+        { id: 'B', text: "Sharing rumors" },
+        { id: 'C', text: "Editing videos" },
+        { id: 'D', text: "Creating polls" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Fact-checking compares claims with credible evidence."
+    },
+    {
+      question: "Which action helps reduce political misinformation?",
+      options: [
+        { id: 'A', text: "Verify before sharing" },
+        { id: 'B', text: "Forward all messages" },
+        { id: 'C', text: "Trust every viral post" },
+        { id: 'D', text: "Ignore evidence" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Verification is the best defense against misinformation."
+    }
+  ]
+},
+    {
+  id: 15,
+  title: "Health & Medical Myths",
+  category: "Level 2: Intermediate",
+  questions: [
+    {
+      question: "What should you do before following medical advice online?",
+      options: [
+        { id: 'A', text: "Verify with trusted health sources" },
+        { id: 'B', text: "Follow it immediately" },
+        { id: 'C', text: "Share it with everyone" },
+        { id: 'D', text: "Ignore expert opinions" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Medical advice should come from trusted professionals and sources."
+    },
+    {
+      question: "Which claim is most likely a health myth?",
+      options: [
+        { id: 'A', text: "Vaccines are tested before approval" },
+        { id: 'B', text: "Doctors recommend healthy diets" },
+        { id: 'C', text: "A miracle drink cures every disease instantly" },
+        { id: 'D', text: "Exercise improves fitness" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Claims of miracle cures are usually unsupported."
+    },
+    {
+      question: "Why are health myths dangerous?",
+      options: [
+        { id: 'A', text: "They can lead to harmful decisions" },
+        { id: 'B', text: "They improve healthcare" },
+        { id: 'C', text: "They increase scientific evidence" },
+        { id: 'D', text: "They improve treatment outcomes" }
+      ],
+      correctAnswer: 'A',
+      explanation: "False medical information can harm people's health."
+    },
+    {
+      question: "Which source is most trustworthy for health information?",
+      options: [
+        { id: 'A', text: "Anonymous social media account" },
+        { id: 'B', text: "Recognized health organization" },
+        { id: 'C', text: "Random blog comment" },
+        { id: 'D', text: "Forwarded message" }
+      ],
+      correctAnswer: 'B',
+      explanation: "Health organizations use scientific evidence."
+    },
+    {
+      question: "Which statement should be viewed skeptically?",
+      options: [
+        { id: 'A', text: "Doctors publish research studies" },
+        { id: 'B', text: "Hospitals provide treatments" },
+        { id: 'C', text: "This secret remedy works better than all medicine!" },
+        { id: 'D', text: "Vaccines help prevent diseases" }
+      ],
+      correctAnswer: 'C',
+      explanation: "Extraordinary health claims require strong evidence."
+    },
+    {
+      question: "What is peer review?",
+      options: [
+        { id: 'A', text: "Experts evaluating research" },
+        { id: 'B', text: "Social media voting" },
+        { id: 'C', text: "Advertising a product" },
+        { id: 'D', text: "Sharing rumors" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Peer review helps ensure scientific quality."
+    },
+    {
+      question: "Which health claim is most reliable?",
+      options: [
+        { id: 'A', text: "Claim supported by scientific studies" },
+        { id: 'B', text: "Claim from an anonymous message" },
+        { id: 'C', text: "Claim with no evidence" },
+        { id: 'D', text: "Claim from a viral meme" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Scientific evidence is the strongest support."
+    },
+    {
+      question: "What is a red flag in health information?",
+      options: [
+        { id: 'A', text: "References to research" },
+        { id: 'B', text: "Expert medical review" },
+        { id: 'C', text: "Guaranteed cure for every condition" },
+        { id: 'D', text: "Published clinical study" }
+      ],
+      correctAnswer: 'C',
+      explanation: "No treatment can guarantee a cure for every condition."
+    },
+    {
+      question: "Why is scientific evidence important?",
+      options: [
+        { id: 'A', text: "It supports accurate conclusions" },
+        { id: 'B', text: "It makes headlines viral" },
+        { id: 'C', text: "It increases advertising" },
+        { id: 'D', text: "It changes website colors" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Evidence helps determine whether a claim is true."
+    },
+    {
+      question: "What is the safest response to a suspicious health claim?",
+      options: [
+        { id: 'A', text: "Check trusted medical sources first" },
+        { id: 'B', text: "Share it immediately" },
+        { id: 'C', text: "Assume it is true" },
+        { id: 'D', text: "Ignore expert advice" }
+      ],
+      correctAnswer: 'A',
+      explanation: "Verification helps prevent the spread of health misinformation."
+    }
+  ]
+},
     { id: 16, title: "AI Generated Content", category: "Level 2: Intermediate", questions: [] },
     { id: 17, title: "Fake Expert Claims", category: "Level 2: Intermediate", questions: [] },
     { id: 18, title: "Conspiracy Theories", category: "Level 2: Intermediate", questions: [] },
